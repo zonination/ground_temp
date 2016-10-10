@@ -13,6 +13,5 @@ Reddit user /u/larkar posted [this thread](https://np.reddit.com/r/dataisbeautif
 
 ## Information
 
-**Tools:** R, ggplot2
-
-**Source:** /u/larkar's own recordings, provided on [this thread](https://np.reddit.com/r/dataisbeautiful/comments/543isa/temperature_variation_at_different_depth_under/d7z5f9c). Data was converted to `.csv`, and `NA` values were removed to provide `temp.csv` file found in this repository.
+* **Tools:** R, ggplot2
+* **Source:** /u/larkar's own recordings, provided on [this thread](https://np.reddit.com/r/dataisbeautiful/comments/543isa/temperature_variation_at_different_depth_under/d7z5f9c). Data was converted to `.csv`, and `NA` values were removed to provide `temp.csv` file found in this repository.
