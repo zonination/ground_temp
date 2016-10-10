@@ -13,7 +13,7 @@ temp$Tid  <- strptime(temp$Tid,"%a %b %d %H:%M:%S %Y")# Convert time into readab
 temp$variable <- as.numeric(substr(temp$variable,3,5))# Convert "J"s into numeric values
 temp      <- subset(temp,!is.na(value))               # Remove NA's from value column
 
-# Set heights of the data, since geom_tile() will not yield a full fill
+# Set heights of the data, since geom_rect() will not yield a full fill without them
 temp$height<-NA
 a<-c(0,unique(temp$variable))
 for(n in 1:length(a)){b[n-1]<-a[n]-a[n-1]}
