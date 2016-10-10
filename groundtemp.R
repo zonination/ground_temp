@@ -3,10 +3,10 @@ setwd("/home/zonination/Dropbox/R/Ground Temp")
 library(ggplot2)
 library(reshape2)
 library(viridis)
-temp <- read.csv("marktemp2013.csv") # Thanks to /u/larkar for the data https://redd.it/543isa
+temp <- read.csv("temp.csv") 
 
 # Reshape the data into plottable data
-temp      <- subset(temp,!is.na(Kolumn5))             # Remove NA's from end of data set
+# temp      <- subset(temp,!is.na(Kolumn5))             # Remove NA's from end of data set
 temp      <- temp[,1:19]                              # Remove last 3 columns from set
 temp      <- melt(temp,id=1:9)                        # Convert all data into column format
 temp$Tid  <- strptime(temp$Tid,"%a %b %d %H:%M:%S %Y")# Convert time into readable format
