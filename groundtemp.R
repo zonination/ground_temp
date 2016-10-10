@@ -16,12 +16,13 @@ temp      <- subset(temp,!is.na(value))               # Remove NA's from value c
 # Set heights of the data, since geom_rect() will not yield a full fill without them
 temp$height<-NA
 a<-c(0,unique(temp$variable))
+b<-0
 for(n in 1:length(a)){b[n-1]<-a[n]-a[n-1]}
 b<-c(0,b)
 
 for(n in 1:nrow(temp)){
   temp$height[n]<-b[a==temp$variable[n]]
-  print(paste(signif(n*100/nrow(temp),3),"% complete",sep=""))}
+  print(paste(signif(n*100/nrow(temp),4),"% complete",sep=""))}
 rm(n)
 
 ggplot(temp)+
@@ -31,7 +32,7 @@ ggplot(temp)+
                 xmax=Tid+5*5*60,
                 fill=value))+
   scale_fill_viridis("Temperature (C)")+
-  scale_y_reverse()+
+  scale_y_reverse(breaks=seq(0,140,10),limits=c(135,0))+
   ggtitle("Ground Temperature at 64.7N, 20.9E")+
   ylab("Depth (cm)")+
   xlab("Date")+
